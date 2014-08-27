@@ -172,7 +172,7 @@ local start = function()
 	term.clear()
 	term.setCursorPos(1, 1)
 	term.setTextColor(colors.LIGHTBLUE)
-	print(os.lunix().."\n(c) Harrison Knox 2014\nRunning on "..os.version())
+	print(os.lunix().."\nMade by Harrison Knox 2014\nRunning on "..os.version())
 	local commandHistory = {}
 	while running do
 		term.setBackgroundColor(colors.BLACK)
