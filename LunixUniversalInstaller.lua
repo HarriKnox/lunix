@@ -91,12 +91,12 @@ local maxlen, maxheight = screenx - 2, screeny - 10 - 1
 
 local convert = function(line)
 	local rep = function(str, num)
-		return string.rep(str, (num >= 0 and num or 0)
+		return string.rep(str, (num >= 0 and num or 0))
 	end
 	local indent = (string.find(line or "", "%S") or 1) - 1
 	line = string.sub(line, indent + 1)
 	if #line > maxlen - indent then
-		line = string.sub(line, 1, (screenx - 3) / 2).."..."..string.sub(line, (screenx - 2) / -2)
+		line = string.sub(line, 1, (maxlen - indent - 3) / 2).."..."..string.sub(line, (maxlen - indent - 2) / -2)
 	end
 	return rep(" ", indent)..line..rep(" ", maxlen - indent - #line)
 end
