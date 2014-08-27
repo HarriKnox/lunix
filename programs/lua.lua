@@ -81,5 +81,5 @@ while running do
 			func, e, forcePrint = getfunc(input)
 		end
 		run(func, e, forcePrint)
-    end
+	end
 end
