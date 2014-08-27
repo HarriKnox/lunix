@@ -42,7 +42,7 @@ local run = function(func, e, forcePrint)
 	end
 end
 
-term.setTextColour(colors.LIGHTBLUE)
+term.setTextColor(colors.LIGHTBLUE)
 term.setBackgroundColor(colors.BLACK)
 print("Lua REPL in Lunix")
 
