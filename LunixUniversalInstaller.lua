@@ -90,12 +90,15 @@ local screenx, screeny = term.getSize()
 local maxlen, maxheight = screenx - 2, screeny - 10 - 1
 
 local convert = function(line)
+	local rep = function(str, num)
+		return string.rep(str, (num >= 0 and num or 0)
+	end
 	local indent = (string.find(line or "", "%S") or 1) - 1
 	line = string.sub(line, indent + 1)
 	if #line > maxlen - indent then
 		line = string.sub(line, 1, (screenx - 3) / 2).."..."..string.sub(line, (screenx - 2) / -2)
 	end
-	return string.rep(" ", (indent >= 0 and indent or 0))..line..string.rep(" ", maxlen - indent - #line)
+	return rep(" ", indent)..line..rep(" ", maxlen - indent - #line)
 end
 
 local output = function()
